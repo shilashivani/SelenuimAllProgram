@@ -1,0 +1,18 @@
+package practice;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import basic.OpenBrowser;
+
+public class IframePractice {
+	public static void main(String[] args) {
+		WebDriver driver=OpenBrowser.OpenBrowser1("https://demoqa.com/frames");
+		WebElement frame=driver.findElement(By.xpath("//iframe[@id='frame1']"));	
+          driver.switchTo().frame(frame);
+          WebElement text=driver.findElement(By.xpath("//h1['text()=This is a sample page']"));
+         String text1= text.getText();
+         System.out.println(text1);
+}
+}
